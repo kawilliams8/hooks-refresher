@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-function Counter () {
-    const [count, setCount] = useState(0);
+function Multiplier () {
+    const [num, setNum] = useState(1);
 
     return (
         <div>
-            <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>Click me</button>
+            <h1>Your Number: {num}</h1>
+            <button onClick={() => setNum(num * 10)}>Multiply by 10</button>
         </div>
     );
 }
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.render(<Multiplier />, document.getElementById('root'));
