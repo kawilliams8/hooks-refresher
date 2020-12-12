@@ -11,7 +11,8 @@ function Multiplier () {
     //Can be object, or any data type
 
     const numsList = nums.map((num, index) => {
-        return index == nums.length - 1 ? num : num += ', ';
+        let list = index === nums.length - 1 ? num : num += ', ';
+        return list;
     });
 
     const nextNum = nums[nums.length - 1] + 1;
