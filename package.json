@@ -1,0 +1,23 @@
+{
+  "name": "hooks-refresher",
+  "version": "1.0.0",
+  "description": "A React Hooks refresher project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kawilliams8/hooks-refresher.git"
+  },
+  "keywords": [
+    "React",
+    "Hooks"
+  ],
+  "author": "Katherine Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kawilliams8/hooks-refresher/issues"
+  },
+  "homepage": "https://github.com/kawilliams8/hooks-refresher#readme"
+}
