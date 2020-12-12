@@ -4,7 +4,8 @@
   "description": "A React Hooks refresher project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development",
     "test": "test"
   },
   "repository": {
