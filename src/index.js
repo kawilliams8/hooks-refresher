@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 function Multiplier () {
@@ -9,6 +9,15 @@ function Multiplier () {
     //Use it as you would this.setState()
     //Requires one argument, the initial state: 1
     //Can be object, or any data type
+
+    useEffect(() => {
+        document.title = `Your number: ${num.myNum}`;
+        return () => {console.log(`useEffect clean up!`);};
+    });
+    //Set up useEffect like componentDidMount or other lifecycle methods
+    //useEffect is called on every render
+    //Return a function for any 'clean up' needs
+    //Because the func is functionally scoped, it can access props and state
 
     const numsList = nums.map((num, index) => {
         let list = index === nums.length - 1 ? num : num += ', ';
