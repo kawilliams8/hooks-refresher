@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "lint": “eslint --fix \"src/**/*.js\"",
     "pretty": "prettier --write \"src/**/*.js\"",
     "start": "webpack serve --mode development",
     "test": "test"
