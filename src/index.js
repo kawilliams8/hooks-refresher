@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-class Welcome extends React.Component {
-    render () {
-        return <h1>Hello World</h1>;
-    }
+function Counter () {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
 }
 
-ReactDOM.render(<Welcome />, document.getElementById('root'));
+ReactDOM.render(<Counter />, document.getElementById('root'));
