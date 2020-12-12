@@ -16,7 +16,7 @@ function Multiplier () {
     });
     //Set up useEffect like componentDidMount or other lifecycle methods
     //useEffect is called on every render
-    //Return a function for any 'clean up' needs
+    //Return a function for any 'clean up' needs (runs on component un-mount)
     //Because the func is functionally scoped, it can access props and state
 
     const numsList = nums.map((num, index) => {
