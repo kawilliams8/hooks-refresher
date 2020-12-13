@@ -10,7 +10,8 @@ function Multiplier () {
     //Can be object, or any data type
 
     useEffect(() => {
-        document.title = `Your number: ${num.myNum}`;
+        document.title = `Your Hooks number: ${num.myNum}`;
+        // console.log('hooks'); //Executes after componentDidMount in Class
         return () => {
             console.log(`useEffect clean up!`);
         };

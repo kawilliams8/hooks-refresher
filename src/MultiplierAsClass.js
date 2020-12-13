@@ -12,8 +12,19 @@ class MultiplierAsClass extends React.Component {
     }
 
     componentDidMount () {
+        document.title = `Your Class number: ${this.state.myNum}`;
         this.setState({ nextNum: this.state.nums[this.state.nums.length - 1] + 1 });
+        // console.log('class'); //Executes before useEffect in Hooks
     }
+    //Runs once after component is rendered on the DOM
+    //Instantiate fetch calls or subscriptions here
+
+    componentWillUnmount () {
+        console.log('componentWillUnmount clean up!');
+    }
+    //Use for clean up from componentDidMount
+    //Invoked right before component unmounts and is destroyed
+    //No need to re-setState... it will never re-render
 
     handleMultiplier () {
         this.setState({ myNum: this.state.myNum * 10 });
