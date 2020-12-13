@@ -20,6 +20,18 @@ class MultiplierAsClass extends React.Component {
         this.setState({ myNum2: this.state.myNum2 * 10 });
     }
 
+    convertNumsList () {
+        let numsList = this.state.nums.map((num, index) => {
+            return index === this.state.nums.length - 1 ? num : (num += ", ");
+        });
+        return numsList;
+    }
+
+    incrementNumsList () {
+        this.setState({ nums: [...this.state.nums, this.state.nextNum] });
+        this.setState({ nextNum: this.state.nextNum + 1 });
+    }
+
     render () {
         return (
             <div>
@@ -33,11 +45,11 @@ class MultiplierAsClass extends React.Component {
                 >
           Multiply by 10
                 </button>
-                <h3>List of numbers: {''}</h3>
-                <h3>Next number: {this.nextNum}</h3>
+                <h3>List of numbers: {this.convertNumsList()}</h3>
+                <h3>Next number: {this.state.nextNum}</h3>
                 <button
                     onClick={() => {
-
+                        this.incrementNumsList();
                     }}
                 >
           Add to list
