@@ -29,8 +29,9 @@ function Multiplier () {
 
     return (
         <div>
-            <h1>Your Number: {num.myNum}</h1>
-            <h1>Your Second Number: {num2.myNum2}</h1>
+            <h1>Functional Component with Hooks</h1>
+            <h3>Your Number: {num.myNum}</h3>
+            <h3>Your Second Number: {num2.myNum2}</h3>
             <button
                 onClick={() => {
                     setNum({ myNum: num.myNum * 10 });
@@ -39,8 +40,8 @@ function Multiplier () {
             >
             Multiply by 10
             </button>
-            <h1>List of numbers: {numsList}</h1>
-            <h1>Next number: {nextNum}</h1>
+            <h3>List of numbers: {numsList}</h3>
+            <h3>Next number: {nextNum}</h3>
             <button
                 onClick={() => {
                     setNums([...nums, nextNum]);
