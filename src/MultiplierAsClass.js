@@ -19,6 +19,11 @@ class MultiplierAsClass extends React.Component {
     //Runs once after component is rendered on the DOM
     //Instantiate fetch calls or subscriptions here
 
+    componentDidUpdate () {
+        document.title = `Component Updated! ${this.state.myNum} | ${this.state.nums.length }`;
+    }
+    //Runs each time state is updated, etc
+
     componentWillUnmount () {
         console.log('componentWillUnmount clean up!');
     }

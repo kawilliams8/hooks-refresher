@@ -17,7 +17,7 @@ function Multiplier () {
         };
     });
     //Set up useEffect like componentDidMount or other lifecycle methods
-    //useEffect is called on every render
+    //useEffect is called on every render (both the mount and updates)
     //Return a function for any 'clean up' needs (runs on component un-mount)
     //Because the func is functionally scoped, it can access props and state
 
