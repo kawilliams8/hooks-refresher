@@ -31,6 +31,17 @@ function Multiplier () {
     //Return a function for any 'clean up' needs (runs on component un-mount)
     //Because the func is functionally scoped, it can access props and state
 
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleResize = () => {
+        setWidth(window.innerWidth);
+    };
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+        //Return a function
+        //The return code will always run first for clean up, then the other code for setup. It's cyclical.
+    }, []);
+
     const numsList = nums.map((num, index) => {
         let list = index === nums.length - 1 ? num : (num += ', ');
         return list;
@@ -64,6 +75,7 @@ function Multiplier () {
             >
             Add to list
             </button>
+            <h3>Your Window Width: {width}</h3>
         </div>
     );
 }
