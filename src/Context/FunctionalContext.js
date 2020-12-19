@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { DarkThemeContext } from './DarkThemeWithContext';
+import React from 'react';
+import { useTheme, useUpdateTheme } from './themeContext';
 
 const FunctionalContext = () => {
-    //useContext instead of wrapping the return div in the DarkThemeContext.Consumer function
-    const darkTheme = useContext(DarkThemeContext);
+    const darkTheme = useTheme();
+    const toggleTheme = useUpdateTheme();
 
     const themeStyles = {
         backgroundColor: darkTheme ? '#333' : '#ccc',
@@ -13,9 +13,12 @@ const FunctionalContext = () => {
     };
 
     return (
-        <div style={themeStyles}>
-          Functional Dark Theme
-        </div>
+        <>
+            <button onClick={toggleTheme}>Toggle Dark Mode</button>
+            <div style={themeStyles}>
+              Functional Dark Theme
+            </div>
+        </>
     );
 };
 
