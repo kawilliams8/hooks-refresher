@@ -5,7 +5,7 @@ const NameRefs = () => {
     const [count, setCount] = useState(0);
 
     //useEffect(() => {
-    //infinite loop
+    //infinite loop while trying to count the renders
     //useEffect runs on a render, and an updated state triggers a render
     //setCount(prevCount => prevCount + 1);
     //});
