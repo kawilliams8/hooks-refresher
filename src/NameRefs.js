@@ -4,6 +4,7 @@ const NameRefs = () => {
     const [name, setName] = useState('');
     const count = useRef(1);
     const inputRef = useRef();
+    const prevName = useRef('');
 
     //useEffect(() => {
     //infinite loop while trying to count the renders
@@ -23,6 +24,7 @@ const NameRefs = () => {
 
     const focus = () => {
         //inputRef is the DOM node
+        //Don't update state or append children here, rely on normal conditional JSX and state/props to handle that
         inputRef.current.focus();
     };
 
@@ -30,10 +32,17 @@ const NameRefs = () => {
         inputRef.current.blur();
     };
 
+    useEffect(() => {
+        //Capture the old state and persist it, without a re-render
+        //This used to only be available in class components' local state
+        prevName.current = inputRef.current.value;
+    });
+
     return (
         <>
             <input ref={inputRef} value={name} onChange={e => setName(e.target.value)} />
             <div>Name: {name}</div>
+            <div>Previous Name: {prevName.current}</div>
             <h1>I rendered {count.current} times.</h1>
             <button onClick={focus}>Focus Input</button>
             <button onClick={blur}>Blur Input</button>
