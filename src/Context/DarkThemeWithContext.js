@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import FunctionalContext from './FunctionalContext';
+import FunctionalContext from './FunctionalContext';
 import ClassContext from './ClassContext';
 
 export const DarkThemeContext = React.createContext();
@@ -18,7 +18,7 @@ const DarkThemeWithContext = () => {
         <>
             <DarkThemeContext.Provider value={darkTheme}>
                 <button onClick={toggleTheme}>Toggle Dark Mode</button>
-                {/* <FunctionalContext/> */}
+                <FunctionalContext/>
                 <ClassContext/>
             </DarkThemeContext.Provider>
         </>

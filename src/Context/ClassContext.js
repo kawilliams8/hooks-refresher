@@ -16,7 +16,7 @@ class ClassContext extends React.Component {
             <>
                 <DarkThemeContext.Consumer>
                     {darkTheme => {
-                        return <div styles={this.themeStyles(darkTheme)}>Class Dark Theme</div>;
+                        return <div style={this.themeStyles(darkTheme)}>Class Dark Theme</div>;
                     }
                     }
                 </DarkThemeContext.Consumer>
