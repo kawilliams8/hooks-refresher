@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react';
 import Todo from './Todo';
 
-const ACTIONS = {
+export const ACTIONS = {
     ADD_TODO: 'add-todo',
     TOGGLE_COMPLETE: 'toggle-complete'
 };
@@ -13,7 +13,12 @@ const reducer = (todos, action) => {
         case ACTIONS.ADD_TODO:
             return [...todos, newTodo(action.payload.name)];
         case ACTIONS.TOGGLE_COMPLETE:
-            return [];
+            return todos.map(todo => {
+                if (todo.id === action.payload.id) {
+                    return ({ ...todo, complete: !todo.complete });
+                }
+                return todo;
+            });
         default:
             return todos;
     }
@@ -29,15 +34,13 @@ const TodosWithReducer = () => {
         setName('');
     };
 
-    console.log('todos', todos);
-
     return (
         <>
             <form onSubmit={handleSubmit}>
                 <input type="text" value={name} onChange={e => setName(e.target.value)}/>
             </form>
             {todos.map(todo => {
-                <Todo key={todo.id} todo={todo}/>
+                return <Todo key={todo.id} todo={todo} dispatch={dispatch}/>;
             })}
         </>
     );

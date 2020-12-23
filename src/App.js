@@ -5,13 +5,13 @@ import React from 'react';
 // import Multiplier from './Multiplier';
 // import MultiplierAsClass from './MultiplierAsClass';
 import TodosWithReducer from './TodosWithReducer';
-import CounterWithReducer from './CounterWithReducer';
+// import CounterWithReducer from './CounterWithReducer';
 
 const App = () => {
     return (
         <>
             <TodosWithReducer />
-            <CounterWithReducer />
+            {/* <CounterWithReducer /> */}
             {/* <DarkThemeContext />
             <NameRefs />
             <ThemeWithMemo />
