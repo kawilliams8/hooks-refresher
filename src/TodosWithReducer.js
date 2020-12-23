@@ -3,7 +3,8 @@ import Todo from './Todo';
 
 export const ACTIONS = {
     ADD_TODO: 'add-todo',
-    TOGGLE_COMPLETE: 'toggle-complete'
+    TOGGLE_COMPLETE: 'toggle-complete',
+    DELETE_TODO: 'delete-todo'
 };
 const newTodo = (name) => {
     return { id: Date.now(), name: name, complete: false };
@@ -18,6 +19,12 @@ const reducer = (todos, action) => {
                     return ({ ...todo, complete: !todo.complete });
                 }
                 return todo;
+            });
+        case ACTIONS.DELETE_TODO:
+            return todos.filter(todo => {
+                if (todo.id !== action.payload.id) {
+                    return todo;
+                }
             });
         default:
             return todos;

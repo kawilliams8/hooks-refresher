@@ -10,7 +10,7 @@ const Todo = ({ todo, dispatch }) => {
             <button onClick={() => dispatch({ type: ACTIONS.TOGGLE_COMPLETE, payload: { id: todo.id } })}>
               Toggle Complete
             </button>
-            <button>Delete</button>
+            <button onClick={() => dispatch({ type: ACTIONS.DELETE_TODO, payload: { id: todo.id } })}>Delete</button>
         </div>
     );
 };
