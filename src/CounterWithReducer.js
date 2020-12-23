@@ -7,7 +7,12 @@ const CounterWithReducer = () => {
     //If we passed something simple, like 0, the first returned from useReducer could just be "count"
     //Dispatch() is the func called to update state, given some parameters
     //The reducer needs current state, and the action to execute upon it
+    //The ACTIONS object means the hard-coded strings are only in one place... removes spelling errors elsewhere
 
+    const ACTIONS = {
+        INCREMENT: 'increment',
+        DECREMENT: 'decrement'
+    };
     const reducer = (state, action) => {
         switch (action.type) {
             case 'increment':
@@ -21,11 +26,11 @@ const CounterWithReducer = () => {
     const [state, dispatch] = useReducer(reducer, { count: 0 });
 
     const increment = () => {
-        dispatch({ type: 'increment' });
+        dispatch({ type: ACTIONS.INCREMENT });
     };
 
     const decrement = () => {
-        dispatch({ type: 'decrement' });
+        dispatch({ type: ACTIONS.DECREMENT });
     };
 
     return (
