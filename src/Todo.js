@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ACTIONS } from './TodosWithReducer';
 
 const Todo = ({ todo, dispatch }) => {
@@ -16,3 +17,9 @@ const Todo = ({ todo, dispatch }) => {
 };
 
 export default Todo;
+
+Todo.propTypes = {
+    todo: PropTypes.object,
+    complete: PropTypes.bool,
+    dispatch: PropTypes.func
+};
