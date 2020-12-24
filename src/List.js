@@ -4,7 +4,7 @@ const List = ({ getNums }) => {
     const [nums, setNums] = useState([]);
 
     useEffect(() => {
-        setNums(getNums());
+        setNums(getNums(5));
         console.log('Nums updated!');
     }, [getNums]);
 
