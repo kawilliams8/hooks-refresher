@@ -5,14 +5,16 @@ import React from 'react';
 // import Multiplier from './Multiplier';
 // import MultiplierAsClass from './MultiplierAsClass';
 // import TodosWithReducer from './TodosWithReducer';
-import CounterWithReducer from './CounterWithReducer';
+// import CounterWithReducer from './CounterWithReducer';
+import ThemedCounter from './ThemedCounter';
 
 const App = () => {
     return (
         <>
-            {/* <TodosWithReducer /> */}
+            <ThemedCounter />
+            {/* <TodosWithReducer />
             <CounterWithReducer initialCount={100}/>
-            {/* <DarkThemeContext />
+            <DarkThemeContext />
             <NameRefs />
             <ThemeWithMemo />
             <Multiplier />
