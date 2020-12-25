@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useLocalStorage from './useLocalStorage';
 
 const Custom = () => {
-    const [name, setName] = useState('');
+    const [name, setName] = useLocalStorage('name', '');
 
     return (
         <input
