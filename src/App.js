@@ -6,12 +6,14 @@ import React from 'react';
 // import MultiplierAsClass from './MultiplierAsClass';
 // import TodosWithReducer from './TodosWithReducer';
 // import CounterWithReducer from './CounterWithReducer';
-import ThemedCounter from './ThemedCounter';
+// import ThemedCounter from './ThemedCounter';
+import Custom from './Custom';
 
 const App = () => {
     return (
         <>
-            <ThemedCounter />
+            <Custom />
+            {/* <ThemedCounter /> */}
             {/* <TodosWithReducer />
             <CounterWithReducer initialCount={100}/>
             <DarkThemeContext />
